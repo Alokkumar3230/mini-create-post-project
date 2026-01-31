@@ -1,4 +1,7 @@
-import SamplePage from './pages/SamplePage';
+import Feed from './pages/Feed';
+import PostDetail from './pages/PostDetail';
+import Login from './pages/Login';
+import NotFound from './pages/NotFound';
 import type { ReactNode } from 'react';
 
 interface RouteConfig {
@@ -10,10 +13,25 @@ interface RouteConfig {
 
 const routes: RouteConfig[] = [
   {
-    name: 'Sample Page',
+    name: 'Feed',
     path: '/',
-    element: <SamplePage />
-  }
+    element: <Feed />,
+  },
+  {
+    name: 'Post Detail',
+    path: '/post/:id',
+    element: <PostDetail />,
+  },
+  {
+    name: 'Login',
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    name: 'Not Found',
+    path: '*',
+    element: <NotFound />,
+  },
 ];
 
 export default routes;
